@@ -1,0 +1,113 @@
+
+<html>
+    
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+            <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+                        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+                            <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+                                <link href="stylesheet2.css" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+        <div class="bg-inverse p-y-3 section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 p-y-3 text-xs-center">
+                        <h1 class="display-4 m-y-2  ">Marxism in The Adventures of Huckleberry Finn</h1>
+                        <h3 class="display-5 m-y-2">By: Shreyas Angara, Aashish Batheja, Abhishek Mullapudi, and Ayush Ganotra</h3>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="map"></div>
+        <script>
+            
+            
+            // initialize the map
+            var map = L.map('map').setView([39.7122085, -91.357795], 12);
+            // load a tile layer
+            L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                        {
+                        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+                        maxZoom: 25,
+                        minZoom: 5
+                        }).addTo(map);
+            
+            var point1 = new L.LatLng(39.7122085, -91.357795);
+            var point2 = new L.LatLng(39.70823, -91.358);
+            var point3 = new L.LatLng(39.697091, -91.317962);
+            var point4 = new L.LatLng(39.710170, -91.354839);
+            var point6 = new L.LatLng(39.625128, -91.232867);
+            var point7 = new L.LatLng(36.440082, -89.534439);
+            var point8 = new L.LatLng(39.70923, -91.359);
+            var point9 = new L.LatLng(39.710270, -91.355839);
+            var point10 = new L.LatLng(36.441182, -89.535539);
+            var point11 = new L.LatLng(34.862793, -90.383989);
+            var point12 = new L.LatLng(35.729202, -89.963724);
+            var point13 = new L.LatLng(34.295278, -90.751779);
+            var point14 = new L.LatLng(34.294278, -90.750779);
+            var point15 = new L.LatLng(34.852793, -90.373989);
+            var pointList = [point1,point4,point9,point8,point2,point3,point6,point10,point7,point12,point15,point11,point13,point14];
+            var path = new L.Polyline(pointList, {
+                color: 'blue',
+                weight: 5,
+                opacity: 1,
+                smoothFactor: 1
+            });
+            path.addTo(map);
+            var marker1 = L.marker(point1).addTo(map);
+            var popup1 = L.popup({maxWidth:1000,minWidth:300}).setContent("<b>Hannibal, MO (St. Petersburg)</b><br>To begin The Adventures of Huckleberry Finn, we see the Widow and Miss<br> Watson attempt to teach Huck in a school of sorts. Huck, however, sees it<br> differently, saying, “The Widow Douglas...allowed she would sivilize me” (1).<br> This shows us how Widow Douglas and Miss Watson try to educate Huck<br> and teach him good manners so he behaves like an upper class citizen. The<br> motivation for this is to allow him to go from the lower social class to upper social class.<br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twahuc3.jpg>");
+            marker1.bindPopup(popup1);
+            var marker2 = L.marker(point2).addTo(map);
+            var popup2 = L.popup({maxWidth:1000,minWidth:300}).setContent("<b>Hannibal, MO (St.Petersburg)</b><br>In the beginning of chapter eleven, Huck dresses up as a girl<br> and enters the home of Mrs. Judith Loftus to inquire the rumors<br> surrounding him and Jim. Mrs. Loftus tells Huck, who she<br> originally believed to be Sarah Williams, that everyone believed<br> that Huck was killed and they seemed to be blaming it on Jim,<br> who ran away the same day. She also tells him that a 300 dollar<br> reward was being offered for finding Jim. When Huck, horrified,<br> asks why people would hunt him down even though he may not<br> have killed Huck, Mrs. Loftus replies,  “Well, you’re innocent,<br> ain’t you! Does three hundred dollars lay around every day for<br> people to pick up?” (57). This inhumane hunt by the people of<br> the town shows us how society values money over morals,<br> willing to hunt innocent Jim simply for their own monetary gain.<br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twahu94.jpg>");
+            marker2.bindPopup(popup2);
+            var marker3 = L.marker(point3).addTo(map);
+            var popup3 = L.popup({maxWidth:1000,minWidth:300}).setContent("<b>Mississippi River</b><br>While Huck is on his journey down the Mississippi River, he comes across a sinking steamboat. Huck wants to stop<br> and explore the steamboat but Jim is afraid to do so, believing someone may be on it such as a watchman. Huck,<br> however, insists they go because they may be able to find some valuables aboard since as he says, “Steamboat<br> captains is always rich, and get sixty dollars a month, and they don’t care a cent what a thing costs, you know, as<br> long as they want it” (67). This reasoning Huck displays shows how class structure controlled by money allows more<br> fulfillment of wants as you get higher up the chain. The lower classes such as Huck in this case must be satisfied with<br> whatever they can scavenge whereas the upper classes utilize their financial superiority to attain material comforts.<br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twah115.jpg>");
+            marker3.bindPopup(popup3);
+            var marker4 = L.marker(point4).addTo(map);
+            var popup4 = L.popup({maxWidth:1000,minWidth:300}).setContent("<b>Hannibal, MO (St.Petersburg)</b><br>Near the beginning of Chapter 5, Pap confronts Huck about his education. Pap is<br> talking to Huck to stop Huck from becoming educated. He even instructs him,<br> “...you drop that school, you hear?” (19). In this scene, it becomes apparent that Pap <br>is actually jealous of Huck’s schooling. In fact, Pap says to Huck, “You think you’re<br> better’n your father” (19). Pap is jealous that Huck’s education may grant him the<br> ability to move up social classes while Pap seems destined to forever be part of the<br> lower class. Because of this, Pap tries to oppress and control Huck.<br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twahu32.jpg>");
+            marker4.bindPopup(popup4);
+            var marker6 = L.marker(point6).addTo(map);
+            var popup6 = L.popup({maxWidth:1000,minWidth:300}).setContent("<b>Mississippi River</b><br>In Chapter 16, Jim surprises Huck when he tells him of his plans to free his family as soon as he<br> becomes free by arriving in a free state. Huck remarks that Jim “was saying that the first thing he<br> would go to saving up money and never spend a single cent, and when he got enough he would<br> buy his wife...and then they would both work to buy the two children” (88). Jim’s motivation for<br> doing this is to bring his family up on the social order with him. While it is unlikely they will be able<br> to reach a high socioeconomic status, Jim and his family will at least be higher than the slave class<br> on the social hierarchy. <br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twah129.jpg>");
+            marker6.bindPopup(popup6);
+            var marker7 = L.marker(point7).addTo(map);
+            var popup7 = L.popup({maxWidth:1000,minWidth:300}).setContent("<b>Grangerford Settlement, TN</b><br>In chapter 18, Huck describes the Grangerfords and their way of life.<br> After recounting the physical appearances of the Grangerfords, he<br> goes on to discuss the slaves. In addition to each family member<br> owning a personal slave, Huck emphasizes that “The old gentleman<br> owned a lot  of farms and over a hundred n******” (106). A clear<br> aristocracy is present within the Grangerford family and is representative<br> of the class order of society in general at the time. The white, rich,<br> land-owning families oppress the lower class black slaves. This<br> oppression is a core aspect of Marxist theory. The upper class<br> oppresses the lower class to demonstrate their power and higher<br> position on the social hierarchy.<br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twah157.jpg>");
+            marker7.bindPopup(popup7);
+            var marker8 = L.marker(point8).addTo(map);
+            var popup8 = L.popup({maxWidth:1000,minWidth:300}).setContent("<b>Hannibal, MO (St.Petersburg)</b><br>Burdened by the control of Miss Watson and Pap on Huck’s life, he decides to fake his<br> own death, beginning a new life. Pap, a lazy, unaccomplished drunkard, could care less<br> about his son, yet enforces strict rules. After Huck fakes his death using pig blood, some<br> of the townspeople say “We’ve heard considerable about these goings on down in<br> Hookerville, but we don’t know who ‘twas that killed Huck Finn. [...] Some think old Finn<br> done it himself” (56). Due to the portrayal of Pap as a poor, educated man, it is easy for the<br> public to make him the scapegoat for Huck’s death. If Pap was a rich plantation owner,<br> people wouldn’t have thought that he was the one that killed Huck. <br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twahu87.jpg>");
+            marker8.bindPopup(popup8);
+            var marker9 = L.marker(point9).addTo(map);
+            var popup9 = L.popup({maxWidth:1000,minWidth:300}).setContent("<b>Hannibal, MO (St.Petersburg)</b><br>Huck, who possesses a small fortune, entrusts the money with Judge Thatcher. Once Pap comes<br> into town, he demands this money from the judge and spends whatever he can get on whiskey.<br>  After ultimately landing in jail, Judge Thatcher takes Pap into his house to reform him. However,<br> this doesn’t work out, leading Judge Thatcher to nearly give up on Pap. “He said he reckoned a<br> body could reform the old man with a shotgun, maybe, but he didn’t know no other way” (22).<br> This attempt at reform was unsuccessful because of Pap’s failure to acclimate to the environment<br> of a rich household. He doesn’t see eye-to-eye with the moral values of the household, highlighting<br> the inevitable differences between social classes, specifically poor and wealthy whites. The cultures<br> of both characters, of separate statuses, cannot mix.<br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twahu35.jpg>");
+            marker9.bindPopup(popup9);
+            var marker10 = L.marker(point10).addTo(map);
+            var popup10 = L.popup({maxWidth:1000,minWidth:300}).setContent("<b>Grangerford Settlement, TN</b><br>The family feud between the Shepherdsons and the Grangerfords is a prominent one. The two<br> families fight constantly, although the reasoning is unknown to either side. “Laws, it was years ago,<br> how would I know” (105). The Shepherdsons and the Grangerfords represent the failure of capitalism<br> that Marxism predicts. These two aristocratic families compete to gain an advantage over the other,<br> in the hopes of elevating to a higher status and higher wealth. Due to their vast amount of slaves<br> and crops, they have an abundance of economic power, which Marx disapproves of. Those in<br> economic power abuse their power and tend to be immoral, strengthening the distinction between<br> classes, and the competition within classes.<br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twah159.jpg>");
+            marker10.bindPopup(popup10);
+            var marker11 = L.marker(point11).addTo(map);
+            var popup11 = L.popup({maxWidth:550,minWidth:300}).setContent("<b>Wilks Household, AR</b><br>In chapter 30, the “duke” and the “king” argue over who is to blame for the money being placed in the coffin. The heated argument escalates into a physical fight. The duke chokes the king, who eventually concedes saying, “‘Nough! - I own up!” (208). The duke is of lower class than the king. As Marxist theory predicts, the lower (generally working) class will rise in rebellion to overthrow the higher class. While this does not conform perfectly to the Marxist view because the duke is not really of the working class, it is an interesting way to view class struggle. Technically, a lower class is overthrowing an upper so their perspective is considered.<br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twah312.jpg>");
+            marker11.bindPopup(popup11);
+            var marker12 = L.marker(point12).addTo(map);
+            var popup12 = L.popup({maxWidth:400,minWidth:300}).setContent("<b>Carnival Town, AR</b><br>In chapter 22, the King and the Duke continue their conning schemes on the village, putting on plays. “Greenhorns, flatheads! I knew the first house would keep mum and let the rest of the town get roped in; and I knew they’d lay for us the third night, and consider it was their turn now” (148) This emphasizes a key point of Marxism, which is the criticism of capitalism. The King and Duke have their own private entity for profit, which leads to the manipulation of consumers. The immorality of the conmen have translated to the consumers, who don’t want to be the sole viewers to fall for their scheme. Under a Marxist world, the show and its tickets would be a public government entity, setting both the performers and the audience on an equal status.<br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twah223.jpg>");
+            marker12.bindPopup(popup12);
+            var marker13 = L.marker(point13).addTo(map);
+            var popup13 = L.popup({maxWidth:400,minWidth:300}).setContent("<b>Phelps Farm, AR</b><br>In chapter 32, Huck finds the Phelps’s house. Aunt Sally believes that Huck is Tom Sawyer, Huck’s best friend. When Aunt Sally asks Huck what took him so long, he responds saying that a cylinder-head blew out on a steamboat. She asks if anyone got hurt to which Huck responds, “No’m. Killed a nigger.” (221) Aunt Sally responds,“Well, it’s lucky; because sometimes people do get hurt.“ The fact that a black person is not even considered a person is completely against a Marxist world. In a Marxist world, every person would be considered human and of the same value.<br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twah335.jpg>");
+            marker13.bindPopup(popup13);
+            var marker14 = L.marker(point14).addTo(map);
+            var popup14 = L.popup({maxWidth:400,minWidth:300}).setContent("<b>Phelps Farm, AR</b><br>In chapter 33, Huck meets up with Tom and tells him about Jim. Huck goes on to tell Tom that he want’s to steal Jim to which Tom replies, “I’ll help you steal him!” (226) To which Huck thinks, “Well, I let go all holts then, like I was shot. It was the most astonishing speech I ever heard—and I’m bound to say Tom Sawyer fell considerable in my estimation. Only I couldn’t believe it. Tom Sawyer a nigger-stealer!” (226) Huck is shocked when Tom says that he is willing to steal a slave from someone else. Such a view would not be present in a Marxist world since everyone would be of the same class, which would mean that there wouldn’t even be a class of slaves. <br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twah341.jpg>");
+            marker14.bindPopup(popup14);
+            var marker15 = L.marker(point15).addTo(map);
+            var popup15 = L.popup({maxWidth:400,minWidth:300}).setContent("<b>Wilks Household, AR</b><br>In chapter 24, The “duke” and “king” find about Peter Wilks, a man who died recently with a left behind a large estate. “Oh, yes, pretty well off. He had houses and land, and it’s reckoned he left three or four thousand in cash hid up som’ers.” (161) Since Peter wanted to give most of his estate to his brothers, the conman thought that it would be a perfect opportunity for them to act as the brothers of Peter. In a Marxist world, since it would be a completely classless society, there wouldn’t be any estate for the conman to claim. <br><img src=http://twain.lib.virginia.edu/huckfinn/huckpix/twah243.jpg>");
+            marker15.bindPopup(popup15);
+            </script>
+                         
+        
+        
+        
+        
+        
+    </body>
+    
+</html>
